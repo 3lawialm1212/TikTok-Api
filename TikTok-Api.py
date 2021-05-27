@@ -156,5 +156,32 @@ def search_username():
     cookies_search_username = {'sessionid': sessionid_your_account}
 
     #Request Search Username
-    response = requests.get(url_search_username, cookies=cookies_search_username, headers=headers_search_username).text
+    response_search_username = requests.get(url_search_username, cookies=cookies_search_username, headers=headers_search_username).text
 search_username()
+#============================================================================================
+def reset_password_with_email():
+    #Enter Here Email To Reset Password
+    email = ''
+
+    #Url Reset Password
+    url_reset_password = 'https://api2-19.musical.ly/aweme/v1/passport/find-password-via-email/?version_code=8.1.0&language=ar&app_name=musical_ly&vid=DE94C75B-4453-4631-B767-F13EC82F2533&app_version=8.1.0&carrier_region=SA&is_my_cn=0&channel=App%20Store&mcc_mnc=42001&device_id=6904193135771207173&tz_offset=10800&account_region=&sys_region=SA&aid=1233&screen_width=1125&openudid=3304102db83845f858f877479059fb754854080c&os_api=18&ac=WIFI&os_version=14.2&app_language=ar&tz_name=Asia/Riyadh&device_platform=iphone&build_number=81005&device_type=iPhone10,6&iid=6952419388407727877&idfa=D78BAC01-848D-4371-A604-7C3F3D678058&mas=01565e5bd5fc7c45ca0dbfaf0b431797810a9b3cfde417b2d50ebe&as=a1a6df67780d2014cb9003&ts=1618736344'
+
+    #Headers Reset Password
+    headers_reset_password = {
+        'Host': 'api2-19.musical.ly',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Cookie': 'store-country-code=sa; store-idc=alisg; cmpl_token=AgQQAPO_F-RPsI4vzNb-op0_xbEGIBnKf4c0YPgypQ; d_ticket=ef487f804c448df92b74cb66c549aacbea3a4; multi_sids=6778236784885122054%3A5924bd520531b0737f82a92b735cf080; odin_tt=0140fc78f3b9071a0785ce4bfa54c3fd77c077d617adec9e5e41761d34bb06098b245296db51a9de64ac9d35e94faabe8655ff3fd8a5611cc8d03c634598170e; sessionid=5924bd520531b0737f82a92b735cf080; sessionid_ss=5924bd520531b0737f82a92b735cf080; sid_guard=5924bd520531b0737f82a92b735cf080%7C1618733832%7C5184000%7CThu%2C+17-Jun-2021+08%3A17%3A12+GMT; sid_tt=5924bd520531b0737f82a92b735cf080; uid_tt=0775db38e7839f91938e510ed8e67f104c8a987f03cc1b2ce7c240f9699b615c; uid_tt_ss=0775db38e7839f91938e510ed8e67f104c8a987f03cc1b2ce7c240f9699b615c; passport_csrf_token=b4bdeaf659414f4f84a445d2fbd579d8; passport_csrf_token_default=b4bdeaf659414f4f84a445d2fbd579d8; install_id=6952406605603538694; ttreq=1$d88452a4db1211412e4f7c92b77a41f0c4dd513a',
+        'Connection': 'close',
+        'Accept': '*/*',
+        'User-Agent': 'TikTok/8.1.0 (iPhone; iOS 14.2; Scale/3.00)',
+        'Accept-Language': 'ar-SA;q=1, en-SA;q=0.9',
+        'Content-Length': '33',
+        'Accept-Encoding': 'gzip, deflate'
+    }
+
+    #Data Reset Password
+    data_reset_password = f'email={email}'
+
+    #Request Reset Password
+    response_reset_password = requests.post(url_reset_password, data=data_reset_password, headers=headers_reset_password).text
+reset_password_with_email()
