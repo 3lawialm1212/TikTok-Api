@@ -60,7 +60,7 @@ def change_bio():
     cookies_change_bio = {'sessionid': sessionid_your_account}
 
     #Data Change Bio
-    data_change_bio = 'signature=TestChangeBio'
+    data_change_bio = f'signature={Bio}'
 
     #Request Change Bio
     response_change_bio = requests.post(url_change_bio, data=data_change_bio, cookies=cookies_change_bio, headers=headers_change_bio).text
